@@ -13,7 +13,7 @@ GitHub Pages 托管的是已打包的静态文件（HTML/CSS/JS），而 Vite+Re
 
 方法 1（图形界面）：使用 GitHub Desktop
 
-File → Clone repository → 选择 qingning7/CHRISTMAS-TREE → Clone
+File → Clone repository → 选择 需要拉到本地的 repository → Clone
 
 方法 2（浏览器下载）：仓库页面 → Code → Download ZIP → 解压
 
@@ -31,7 +31,7 @@ VS Code：File → Open Folder → `Ctrl + `` 打开内置终端
 
 文件资源管理器：在项目文件夹空白处 Shift + 右键 → 在此处打开 PowerShell/Terminal
 
-或系统 Terminal：cd /path/to/CHRISTMAS-TREE
+或系统 Terminal：cd /path/to/项目名称
 
 确认目录内容：
 
@@ -49,6 +49,7 @@ npm run build
 dist/index.html
 dist/assets/...
 ✓ built in ...
+
 另一种检查构建成功的方法：在本地项目文件夹中查看是否多了一个名为 dist 的文件
 
 如果没有 dist： 报错信息复制并粘贴给AI（常见是依赖未安装、node 版本问题、或不在项目根目录）。
@@ -140,7 +141,7 @@ Pages → Source：选择 gh-pages 分支 或 main / docs（取决于你用的�
 
 等待少许时间（通常几秒到几分钟），再访问页面。
 
-八：如何快速定位“黑屏”/空白的问题（诊断清单）
+八：如何快速定位“黑屏”/空白的问题
 
 打开浏览器 F12 → Console：看是否有 JS 报错（比如 Uncaught ReferenceError）
 
@@ -151,6 +152,14 @@ Network（刷新）：看 index.html、JS/CSS 是否返回 200 或 404。若 JS 
 检查 GitHub Actions logs：看 npm run build 是否成功，upload-pages-artifact 是否上传了 dist。
 
 检查 Pages 设置：Branch / Folder 是否选择正确。
+
+请确认：
+
+打开仓库 → Settings → Pages
+
+在 Source 区块看到：Source: GitHub Actions（自动生成）
+
+一定不要手动改成 main / gh-pages ，否则会覆盖自动部署。
 
 如果使用 React Router（BrowserRouter），页面刷新可能 404 —— 考虑改成 HashRouter 或配置 404 重写到 index.html（Pages 默认不支持 history API 重写）。
 
@@ -187,7 +196,7 @@ git push
 
 常见问题快速答案
 
-Q：Some chunks are larger than 500 kB 会造成黑屏吗？
+Q：开发者工具报错 Some chunks are larger than 500 kB 会造成黑屏吗？
 A：不会，只是性能/优化建议，可以后续按需拆分代码（dynamic import / manualChunks）。
 
 Q：构建成功但页面还是空白？
