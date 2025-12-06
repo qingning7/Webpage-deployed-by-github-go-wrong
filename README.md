@@ -75,6 +75,7 @@ export default defineConfig({
 
 把下面内容粘贴进去（已验证100%可用）：
 
+```yaml
 name: Deploy Vite to GitHub Pages
 
 on:
@@ -109,6 +110,15 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+```
+
+提交：
+
+```bash
+git add .
+git commit -m "Add deploy workflow"
+git push
+```
 
 
 提交（git add . && git commit -m "Add deploy workflow" && git push）
