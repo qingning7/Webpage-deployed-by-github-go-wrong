@@ -36,7 +36,8 @@ VS Code：File → Open Folder → `Ctrl + `` 打开内置终端
 确认目录内容：
 
 ls
-# 应该看到 package.json vite.config.js src index.html ...
+
+应该看到 package.json vite.config.js src index.html ...
 
 四：安装依赖 & 构建（生成 dist）
 直接在终端运行
