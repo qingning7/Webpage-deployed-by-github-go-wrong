@@ -202,8 +202,10 @@ Vite build 的 chunk size 警告可忽略（仅性能提示）
 
 十：常用命令速查（复制粘贴版）
 # 下载仓库（命令行）
+```
 git clone https://github.com/qingning7/CHRISTMAS-TREE.git
 cd CHRISTMAS-TREE
+```
 
 # 安装 & 构建
 ```
