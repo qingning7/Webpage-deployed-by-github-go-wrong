@@ -19,8 +19,10 @@ File → Clone repository → 选择 需要拉到本地的 repository → Clone
 
 方法 3（命令行）：
 
+```
 git clone https://github.com/你的用户名/仓库名.git
 cd 仓库名
+```
 
 
 确认你在项目根目录：能看到 package.json、vite.config.js（或 vite.config.ts）、src/、index.html。
@@ -35,21 +37,27 @@ VS Code：File → Open Folder → `Ctrl + `` 打开内置终端
 
 确认目录内容：
 
+```
 ls
+```
 
 应该看到 package.json vite.config.js src index.html ...
 
 四：安装依赖 & 构建（生成 dist）
 直接在终端运行
+```
 npm install
 npm run build
+```
 
 
 构建成功会看到类似：
 
+```
 dist/index.html
 dist/assets/...
 ✓ built in ...
+```
 
 另一种检查构建成功的方法：在本地项目文件夹中查看是否多了一个名为 dist 的文件
 
@@ -59,11 +67,13 @@ dist/assets/...
 
 在 vite.config.js（或 vite.config.ts）中：
 
+```
 export default defineConfig({
   plugins: [react()],
   base: '/REPO_NAME/', // 例如：'/CHRISTMAS-TREE/'
   // ...
 })
+```
 
 
 说明：base 要以 /repo-name/（包含前后斜杠）形式指定，否则构建后的静态资源引用路径会指向错误位置导致 404 → 白屏。
@@ -196,16 +206,21 @@ git clone https://github.com/qingning7/CHRISTMAS-TREE.git
 cd CHRISTMAS-TREE
 
 # 安装 & 构建
+```
 npm install
 npm run build
+```
 
 # 快速把 dist 内容放到 docs 并推 main
+
+```
 rm -rf docs
 mkdir docs
 cp -r dist/* docs/
 git add docs
 git commit -m "deploy: copy dist to docs"
 git push
+```
 
 常见问题快速答案
 
