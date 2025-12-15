@@ -1,7 +1,7 @@
 # to-solve-the-problem-of-black-webpage
-！本教程适用于由 github pages 部署的网页打开后显示为空（黑屏）
+本教程适用于由 github pages 部署的网页打开后显示为空（黑屏）
 
-！项目类型 ：Vite+React
+项目类型 ：Vite+React
 
 虽然过程看上去繁琐，但是一步步做下来 100% 成功，本人已亲自验证，按以下操作执行后网页能正常显示。
 
@@ -13,7 +13,7 @@ GitHub Pages 托管的是已打包的静态文件（HTML/CSS/JS），而 Vite+Re
 
 方法 1（图形界面）：使用 GitHub Desktop
 
-File → Clone repository → 选择 需要拉到本地的 repository → Clone
+File → Clone repository → 选择需要拉到本地的 repository → Clone
 
 方法 2（浏览器下载）：仓库页面 → Code → Download ZIP → 解压
 
@@ -63,7 +63,7 @@ dist/assets/...
 
 如果没有 dist： 报错信息复制并粘贴给AI（常见是依赖未安装、node 版本问题、或不在项目根目录）。
 
-五：确保 Vite 的 base 配置正确（关键点）
+五：确保 Vite 的 base 配置正确（重要！！！）
 
 在 vite.config.js（或 vite.config.ts）中：
 
